@@ -1,0 +1,8 @@
+***********************************************************************************************
+Note:
+	I was not very creative when making mock data. 
+	My primary goal was to see if the correct execution paths were taken by the expert system.
+	
+	Looking back, I should have spent some more time with creating usernames.
+
+***********************************************************************************************

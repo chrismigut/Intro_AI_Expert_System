@@ -1,0 +1,216 @@
+CLIPS> (load "C:/Users/Chris/Desktop/CLIPSProject2File.CLP")
+Defining defclass: MEMBER
+Defining defclass: ADMIN
+Defining defclass: REPORT
+Defining defclass: LOGGER_REPORT
+Defining defclass: INCIDENT_REPORT
+Defining defclass: TRANSFER_REPORT
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler read-transfer-to-file before defined.
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler read-transfer-to-file primary defined.
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler read-transfer-to-file after defined.
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler write-transfer-to-file before defined.
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler write-transfer-to-file primary defined.
+Defining defmessage-handler: TRANSFER_REPORT
+   Handler write-transfer-to-file after defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler write-outcome-to-file before defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler write-outcome-to-file primary defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler write-outcome-to-file after defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler read-outcome-to-file before defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler read-outcome-to-file primary defined.
+Defining defmessage-handler: INCIDENT_REPORT
+   Handler read-outcome-to-file after defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler write-to-log before defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler write-to-log primary defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler write-to-log after defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler read-log before defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler read-log primary defined.
+Defining defmessage-handler: LOGGER_REPORT
+   Handler read-log after defined.
+Defining deffunction: check-user-permissions
+Defining deffunction: update-permissions
+Defining deffunction: get-system-time
+Defining deffunction: description-system-info
+Defining deffunction: create-new-report
+Defining defrule: show-system-description +j+j
+Defining defrule: create-user +j+j
+Defining defrule: check-permission +j+j
+Defining defrule: update-permissions =j+j
+Defining defrule: if-admin-remove-basic-user +j+j+j
+Defining defrule: display-options-admin +j+j+j+j
+Defining defrule: display-options-member =j+j+j
+Defining defrule: read-log-file +j+j
+Defining defrule: proof-provided-for-incident-report +j+j
+Defining defrule: incident-type-for-incident-report =j+j+j
+Defining defrule: repeated_offense-incident-report =j=j+j
+Defining defrule: offender-name-incident-report +j+j
+Defining defrule: incident-level-incident-report =j=j+j
+Defining defrule: suggest-outcome =j+j+j
+Defining defrule: display-suggestion-to-user =j+j+j+j+j
+Defining defrule: display-suggestion-to-admin =j=j+j+j+j
+Defining defrule: restart-system-after-report +j+j+j
+Defining defrule: set-admin-role =j+j
+Defining defrule: reason-for-transfer +j+j+j+j
+Defining defrule: assign-transfer +j+j+j
+TRUE
+CLIPS> (run)
+******************************
+Statement of Purpose: 
+------------------------------
+  The goal of this expert system is to recommendation course of actions relating to 
+  based on the type of report submitted. The permission level of the user 
+  will determin which reports the user can view. 
+  The primary purpose of the system was created for Systems United Navy (SUN)
+  incident reporting. This system is built as a testbed to see what CLIPS can do. 
+  If the system proves to be somewhat useful, there is an addons that allows CLIPS 
+  code to be used with ptyhon. 
+
+******************************
+System Description : 
+------------------------------
+  This is a forward-chaining expert system using CLIPS. 
+  Foward-chaining takes a series of facts given to return a finial result. 
+  The facts are provided by the user as enter input or from a file. 
+  In this system will be expecting the user to enter input into the terminal.
+
+******************************
+How the System works : 
+------------------------------
+  The system will ask the user a series of questions.
+  Based on those questions, the user will be able to access different
+  functions relating to the sytem based on their permission level. 
+  For example, an officer of the fleet will have access to more reports 
+  then that of a non-officer. We assume that an officer is an admin in general. 
+  Upon the final question asked by the system, will return a result. 
+******************************
+NOTE: OF-1 and OF-2 = normal member, while OF-3,..., OF-7 = admin
+==============================
+
+Starting System...
+------------------------------
+What is your username ? 
+> o
+------------------------------
+What is your rank ? 
+[Allowed format: OF-1, OF-2,..., OF-7]
+> OF-2
+------------------------------
+*** Writing to log: 
+---> Basic user is created: o  
+*** Done writing to log...
+
+[ROUTER1] Logical name Hello member, would you like to create of the following : was not recognized by any routers
+------------------------------
+[1] INCIDENT_REPORT
+------------------------------
+[Type Integer value]
+> 1
+------------------------------
+*** Writing to log: 
+--> Creating a new INCIDENT_REPORT. 
+*** Done writing to log...
+
+
+Incident Reporting:
+Was there any document proof of the incident to be reported?
+------------------------------------------------------------
+Answer: ( Y / N )
+------------------------------------------------------------
+> Y
+*** Writing to log: 
+---> Documented proof of incident: true
+*** Done writing to log...
+
+
+Incident Reporting:
+What type of incident are you reporting?
+------------------------------------------------------------
+[1] Disrespect
+[2] Discrimination
+[3] Disrepute
+------------------------------------------------------------
+> 1
+------------------------------------------------------------
+*** Writing to log: 
+---> Incident type reported: Disrespect
+*** Done writing to log...
+
+
+Incident Reporting:
+Has there been multiple cases of this type ofconduct of the offerder?
+------------------------------------------------------------
+Answer: ( Y / N )
+------------------------------------------------------------
+> Y
+--------------------------------------------------------------------
+*** Writing to log: 
+---> This has been a multiple offenses of this type agasist the offender
+*** Done writing to log...
+
+
+Incident Reporting:
+What is the name of the offerder of the incident?
+------------------------------------------------------------
+> O
+------------------------------------------------------------
+*** Writing to log: 
+---> User has provided the name of the offender of the incident?
+*** Done writing to log...
+
+Processing incident-level...
+*** Writing to log: 
+---> Based on following factors (incident_type & repeated_offense)...incident-level calculated.
+*** Done writing to log...
+
+Processing suggest-outcome...
+*** Writing to suggestion file: 
+*** Done writing to suggestion file...
+
+*** Writing to log: 
+--> System suggesting outcome... 
+*** Done writing to log...
+
+
+Suggestion Processed:
+Would you like to see the suggestion created by system?
+------------------------------------------------------------
+Answer: ( Y / N )
+------------------------------------------------------------
+> Y
+--------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[INCIDENT REPORT] 
+------------------------------------------------------
+Timestamp        : Mon 12/07/2015  : 10:03 PM
+Report Owner     : o
+Offender Name    : O
+Incident Type    : Disrespect
+Repeated Offense : true
+Incident Level   : med
+------------------------------------------------------
+Suggested Outcome: written warning
+--------------------------------------------------------------------
+Thank you for your incident report.
+
+Would you like to write another report? (System restart required)
+------------------------------------------------------------
+Answer: ( Y / N )
+------------------------------------------------------------
+> N
+--------------------------------------------------------------------
+Goodbye
+CLIPS> 

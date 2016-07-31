@@ -1,0 +1,22 @@
+***************************************************************************************************
+Note:
+	This video was created after finding out our TA had issues running the code on his Mac.
+	We later tested the code on multiple different machines, windows/Macs/RedHat Linux, 
+	the code worked on these machines. 
+
+	* It is unknown why the code failed to run on his mac. 
+
+	* The code project code was created in Windows 8.1 machine.
+
+	* The video was created in panic because grades were about due and TA was leaving the country.
+
+***************************************************************************************************
+
+PART 1:
+https://www.youtube.com/watch?v=pIwthTDAJdY
+
+PART 2:
+https://www.youtube.com/watch?v=HinQpzqnLWQ
+
+***************************************************************************************************
+
