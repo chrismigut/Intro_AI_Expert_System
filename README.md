@@ -1,9 +1,12 @@
 CAP5625 Introduction to AI: Expert System (Clips)
 -----------------------------------------------------------------------------------------------------------
 Expert System using CLIPS (C Language Integrated Production System) developed by NASA-Johnson Space Center.
+
 -----------------------------------------------------------------------------------------------------------
-PROJECT AUTHOR: 	Chris A. Migut
+
+PROJECT AUTHOR: Chris A. Migut
 INSTRUCTOR:   	DR. RAFAEL A. PEREZ
+
 -----------------------------------------------------------------------------------------------------------
 
 
