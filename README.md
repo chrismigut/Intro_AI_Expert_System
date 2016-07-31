@@ -62,5 +62,14 @@ The TA’s PC will be used for grading your program.
 Please submit your project online through canvas. Please submit a zipped file including all of your project files and a .txt file containing your group name, description about your expert system, and how to use and run the program.  
 
 -----------------------------------------------------------------------------------------------------------
+##The application has the following features:
+- logging (reading/writing), 
+- switch statements, 
+- loops,
+- 2 : Objects
+- 6 : Classes
+- 6 : Event-handlers, 
+- 5 : Functions, 
+- 21: Rules
 
 ###Final Project Grade: 110 out of 100
